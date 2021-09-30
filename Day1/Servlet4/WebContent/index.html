@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+      Web --------- > Servlet(Java): 언제든 DB를 호출할 수 있다.
+           데이터(짐)
+      
+      Html
+      <a href=""                       GET
+      <form action="" submit을 통해      GET, POST
+      
+      JavaScript
+      location.href = ""               GET
+      
+      Java
+      sendRedirect    Servlet -> Servlet,  Servlet -> Web
+      forward
+      
+      Servlet = server + applet의 줄임말
+-->
+
+<a href="location?name=홍길동">Hello Servlet으로 이동</a> <!-- 무조건 GET방식으로 간다. -->
+
+<br><br>
+
+name:<input type="text" id="name">
+<br><br>
+
+number:<input type="text" id="number">
+<br><br>
+
+<button type="button" onclick="btnClick()">Hello Servlet으로 이동</button>
+
+<script type="text/javascript">
+
+// location.href = "location?name=" + "성춘향";
+
+function btnClick() {
+	let name = document.getElementById("name").value;
+	let number = document.getElementById("number").value;
+	
+	// 검사가 가능하다.( ex) 유저의 입력값 ) 
+	
+	location.href = "location?name=" + name + "&number=" + number;
+	
+}
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
