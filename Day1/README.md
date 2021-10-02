@@ -9,29 +9,20 @@ Servlet은 기본적으로 다음과 같은 과정을 거칩니다
 2. 프로젝트/WebContent/WEB-INF/web.xml 파일에서 호출명을 받고 mapping 한 클래스(Servlet)으로 데이터를 보냅니다
 
 3. 프로젝트/src의 mapping된 클래스(Servlet)에서는 데이터를 받고 데이터 가공, 출력, 데이터전달, 페이지 이동 등을 할 수 있습니다.
+<br>
 
 
 
-호출하는 html은 WebContent안에
-
-연결하는 web.xml은 WebContent/WEB-INF 안에
-
-연결되는 서블릿 자바 클래스는 WebContent밖의 src 안에
-
-존재 하게 됩니다.
+호출하는 html은 WebContent안에 존재하고, 연결하는 web.xml은 WebContent/WEB-INF 안에, 연결되는 서블릿 자바 클래스는 WebContent의 외부 src 안에 존재 하게 됩니다.
+<br>
 
 
-
-web.xml파일이나 서블릿 클래스 파일 변경후 적용할 때는
-
-서버를 재시작 해주는게 안정적입니다.
+web.xml파일이나 서블릿 클래스 파일 변경후 적용할 때는 서버를 재시작 해주는게 안정적입니다.
+<br>
 
 
-
-프로젝트가 바뀌지 않는 한 web.xml 파일은 한개만 존재하므로
-
-web.xml은 게시판 진행에 따라 servlet연결을 누적시키면서 진행합니다.
-
+프로젝트가 바뀌지 않는 한 web.xml 파일은 한개만 존재하므로 web.xml은 게시판 진행에 따라 servlet연결을 누적시키면서 진행합니다.
+<br><br>
 
 
 ### web.xml 기본 설정
@@ -41,6 +32,7 @@ web application의 설정을 위한 deployment descriptor이다.
 Deploy할 때 Servlet의 정보를 설정해준다.
 
 브라우저가 Java Servlet에 접근하기 위해서는 WAS(ex. tomcat)에 필요한 정보를 알려줘야 해당하는 Servlet을 호출할 수 있다.
+<br><br>
 
 우선적으로 Servlet을 호출하기위한 웹페이지를 만든다.
 
@@ -84,6 +76,7 @@ hobby:<input type="checkbox" name="hobby" value="음악감상">음악감상
 </html>
 ```
 
+<br><br>
 * web.xml
 
 ```xml
@@ -118,7 +111,7 @@ hobby:<input type="checkbox" name="hobby" value="음악감상">음악감상
 </servlet-mapping>
 </web-app>
 ```
-
+<br><br>
 
 
 index.html의  innerHTML값과 value값을 받아올 Dto를 생성해준다.
@@ -155,7 +148,7 @@ public class HumanDto {
 	}
 }
 ```
-
+<br><br>
 
 
 서블릿으로 설정할 자바 파일 생성(패키지명과 클래스명은 web.xml의 sevlet-class와 동일, 패키지명은 serv, 클래스명은 HelloServlet)
@@ -201,7 +194,7 @@ public class HelloServlet extends HttpServlet{ // HttpServlet를 상속
 	}
 }
 ```
-
+<br><br>
 
 
 서블릿으로 설정할 자바 파일 생성(패키지명과 클래스명은 web.xml의 sevlet-class와 동일, 패키지명은 serv, 클래스명은 WorldServlet)
